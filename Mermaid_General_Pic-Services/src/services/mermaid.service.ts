@@ -106,7 +106,7 @@ export class MermaidService {
 
         // 构建文件路径
         const relativePath = `/static/images/${fileId}.${outputFormat}`;
-        const absolutePath = path.join(process.cwd(), relativePath);
+        const absolutePath = path.join(process.cwd(), 'static/images', `${fileId}.${outputFormat}`);
         
         // 读取生成的文件并存入缓存
         const fileData = await fs.readFile(absolutePath);
@@ -124,7 +124,9 @@ export class MermaidService {
           processingTimeMs: processingTime,
           queueWaitTimeMs: processStartTime - startTime,
           outputFormat,
-          fileSize: fileData.length
+          fileSize: fileData.length,
+          filePath: absolutePath,
+          downloadUrl: `http://localhost:${config.port}${relativePath}`
         });
 
         return { path: relativePath, data: fileData };
