@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import { AiModelSettings, AI_MODELS, KIMI_MODELS } from '../types';
+import { AiModelSettings, AI_MODELS } from '../types';
 
 const STORAGE_KEY = 'ai_model_settings';
 

@@ -97,6 +97,7 @@ import { ElMessage } from 'element-plus';
 import { useI18n } from 'vue-i18n';
 import { useMermaidStore } from '../stores/mermaid';
 import { api } from '../services/api';
+import type { AiModel } from '../types';
 
 const { t } = useI18n();
 const store = useMermaidStore();
@@ -110,7 +111,8 @@ const settings = reactive({
   dpi: store.dpi,
   theme: store.theme,
   background: store.background,
-  model: 'kimi' // 默认使用 Kimi
+  model: 'kimi' as AiModel, // 默认使用 Kimi
+  apiKey: '' // 添加必需的 apiKey 字段
 });
 
 const handleGenerate = async () => {

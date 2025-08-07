@@ -42,7 +42,12 @@ export const api = {
     const response = await axios.post(
       `${BASE_URL}/api/mermaid/convert`,
       { code, format, dpi, theme, background },
-      { responseType: 'blob' }
+      { 
+        responseType: 'blob',
+        headers: {
+          'Accept': 'image/*'
+        }
+      }
     );
     return response.data;
   },

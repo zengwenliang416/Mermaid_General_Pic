@@ -112,7 +112,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import en from 'element-plus/dist/locale/en.mjs';
@@ -125,7 +125,7 @@ import {
   Monitor
 } from '@element-plus/icons-vue';
 
-const router = useRouter();
+// const router = useRouter();
 const { t, locale } = useI18n();
 const helpDialogVisible = ref(false);
 

@@ -157,7 +157,9 @@ const handleDelete = async (index: number) => {
     );
     
     // 释放 URL
-    URL.revokeObjectURL(store.history[index].url);
+    if (store.history[index].url) {
+      URL.revokeObjectURL(store.history[index].url);
+    }
     // 删除记录
     store.history.splice(index, 1);
   } catch {
@@ -180,7 +182,9 @@ const handleClearHistory = async () => {
     
     // 释放所有 URL
     store.history.forEach(item => {
-      URL.revokeObjectURL(item.url);
+      if (item.url) {
+        URL.revokeObjectURL(item.url);
+      }
     });
     // 清空历史记录
     store.history = [];
