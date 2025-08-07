@@ -3,7 +3,7 @@ name: mermaid-converter
 services:
   frontend:
     build:
-      context: ./frontend
+      context: ./Mermaid_General_Pic-Web
       dockerfile: Dockerfile
     ports:
       - "3000:80"
@@ -17,7 +17,7 @@ services:
 
   backend:
     build:
-      context: ./backend-node
+      context: ./Mermaid_General_Pic-Services
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
@@ -27,10 +27,10 @@ services:
       - HOST=0.0.0.0
       - LOG_LEVEL=debug
     volumes:
-      - ./backend-node/logs:/app/logs
-      - ./backend-node/static:/app/static
+      - ./Mermaid_General_Pic-Services/logs:/app/logs
+      - ./Mermaid_General_Pic-Services/static:/app/static
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/api/formats"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/mermaid/formats"]
       interval: 30s
       timeout: 10s
       retries: 3
