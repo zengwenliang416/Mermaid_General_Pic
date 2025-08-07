@@ -1,0 +1,38 @@
+
+
+> backend-node@1.0.0 start /Users/wenliang_zeng/workspace/Mer
+> backend-node@1.0.0 start /Users/wenliang_zeng/workspace/Mermaid_General_Pic/Mermaid_General_Pic-Services
+> node dist/index.js
+
+2025-03-07 15:27:06.481 INFO    [System]     [m7ygd7g1-ex8p] 
+2025-03-07 15:27:06.481 INFO    [System]     [m7ygd7g1-ex8p] Worker pool initialized
+  maxWorkers: 7 | idleTimeout: 30000 | script: mermaid.worker
+  maxWorkers: 7 | idleTimeout: 30000 | script: mermaid.worker.ts
+2025-03-07 15:27:06.484 INFO    [System]     [m7ygd7g3-gftb] 
+2025-03-07 15:27:06.484 INFO    [System]     [m7ygd7g3-gftb] Worker created
+  workerId: gh6y7a | totalWorkers: 1 | maxWorkers: 7
+2025-03-07 15:27:06.510 INFO    [System]     [m7ygd7gu-dxju] 
+2025-03-07 15:27:06.510 INFO    [System]     [m7ygd7gu-dxju] Uncaught Exception
+  error: listen EADDRINUSE: address already in use :::8000 | 
+  error: listen EADDRINUSE: address already in use :::8000 | stack: Error: listen EADDRINUSE: address already in use :::80
+  error: listen EADDRINUSE: address already in use :::8000 | stack: Error: listen EADDRINUSE: address already in use :::8000
+    at Server.setupListenHandle [as _listen2] (node:net:1907:
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at Function.listen (/Users/wenliang_zeng/workspace/Mermai
+    at Function.listen (/Users/wenliang_zeng/workspace/Mermaid_General_Pic/Mermaid_General_Pic-Services/node_modules/.pnpm
+    at Function.listen (/Users/wenliang_zeng/workspace/Mermaid_General_Pic/Mermaid_General_Pic-Services/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/application.js:635:2
+    at Function.listen (/Users/wenliang_zeng/workspace/Mermaid_General_Pic/Mermaid_General_Pic-Services/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/wenliang_zeng/workspace/Mer
+    at Object.<anonymous> (/Users/wenliang_zeng/workspace/Mermaid_General_Pic/Mermaid_General_Pic-Services/dist/index.js:4
+    at Object.<anonymous> (/Users/wenliang_zeng/workspace/Mermaid_General_Pic/Mermaid_General_Pic-Services/dist/index.js:49:20)
+    at Module._compile (node:internal/modules/cjs/loader:1546
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Object..js (node:internal/modules/cjs/loader:1689:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:315
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+ ELIFECYCLE  Command failed with exit code 1.lsof -i :8000 -t | xargs kill -9 
